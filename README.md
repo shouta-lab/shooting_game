@@ -1,4 +1,30 @@
 # shooting game
+シューティングゲームです。
+
+# DEMO
+準備中
+
+# Features
+準備中
+
+# Requirement
+準備中
+
+# Installation
+準備中
+
+# Usage
+準備中
+
+# Note
+準備中
+
+# Author
+*作成者:しょうた
+*Twitter:@shoutarou0224
+
+# License
+MIT License
 
 Copyright (c) 2022 shouta0224
 
