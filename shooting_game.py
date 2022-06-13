@@ -14,7 +14,7 @@ idx = 0
 tmr = 0
 p_x = 0
 p_y = 0
-p_s_x = 20
+p_s_x = 30
 p_s_y = 50
 full_s = 0
 
