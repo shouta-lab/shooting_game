@@ -52,4 +52,10 @@ def main():
         elif idx == 1: #reset
             idx = 2
         elif idx == 2: #play
-            
+            if key[pygame.K_K_RIGHT] == 1:
+                p_x = p_x + 10
+            elif key[pygame.K_K_LEFT] == 1:
+                p_x = p_x - 10
+            if key[pygame.K_K_UP] == 1:
+                p_y = p_y - 10
+                
