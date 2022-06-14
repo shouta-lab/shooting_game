@@ -1,0 +1,1 @@
+pyinstaller shooting_game.py --onefile
