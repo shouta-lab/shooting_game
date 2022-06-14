@@ -54,8 +54,8 @@ def main():
             p_y = 720 / 2
             idx = 2
         elif idx == 2: # play
-            screen.fill(BLACK)
-            pygame.draw.rect(screen, RED, [p_x-p_s_x, p_y-p_s_y, p_s_x*2, p_s_y*2])
+            screen.fill(WHITE)
+#            pygame.draw.rect(screen, RED, [p_x-p_s_x, p_y-p_s_y, p_s_x*2, p_s_y*2])
             player_img = pygame.image.load("png/player.png")
             if key[pygame.K_RIGHT] == 1: # 移動入力
                 p_x = p_x + 10
