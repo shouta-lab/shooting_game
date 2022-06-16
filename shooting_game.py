@@ -17,6 +17,26 @@ p_y = 0
 p_s_x = 30
 p_s_y = 50
 full_s = 0
+TAMA_MAX = 200
+tama_no = 0
+tama_f = [False]*TAMA_MAX
+tama_x = [0]*TAMA_MAX
+tama_y = [0]*TAMA_MAX
+
+def set_tama():
+    global tama_no
+    tama_f[tama_no] = True
+    tama_x[tama_no] = p_x
+    tama_y[tama_no] = p_y
+    tama_no = (tama_no+1)%TAMA_MAX
+
+def move_tama():
+    for i in range(TAMA_MAX):
+        if tama_f[i] == True:
+            tama_y[i] = tama_y[i] - 36
+            scrn.blit(player_img, [tama_x[i], tama_y[i]])
+            if tama_y[i] < 0:
+                    tama_f[i] = False
 
 def main():
     global idx, tmr, p_x, p_y, full_s, p_s_x, p_s_y
@@ -55,7 +75,7 @@ def main():
             idx = 2
         elif idx == 2: # play
             screen.fill(WHITE)
-#            pygame.draw.rect(screen, RED, [p_x-p_s_x, p_y-p_s_y, p_s_x*2, p_s_y*2])
+            pygame.draw.rect(screen, RED, [p_x-p_s_x, p_y-p_s_y, p_s_x*2, p_s_y*2])
             player_img = pygame.image.load("png/player.png")
             if key[pygame.K_RIGHT] == 1: # 移動入力
                 p_x = p_x + 10
@@ -65,6 +85,8 @@ def main():
                 p_y = p_y - 10
             elif key[pygame.K_DOWN] == 1:
                 p_y = p_y + 10
+            if key[pygame.K_SPACE] == 1:
+                set_tama()
             if p_x < 0:
                 p_x = 0
             elif p_x > 1280:
@@ -74,6 +96,7 @@ def main():
             elif p_y > 720:
                 p_y = 720
             screen.blit(player_img, (p_x-p_s_x, p_y-p_s_y))
+            move_tama()
         pygame.display.update()
         clock.tick(60)
 
